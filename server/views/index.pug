@@ -1,10 +1,88 @@
 extends ./layout/default
 
+block title
+    title Koa Movie 首页
+
 block content
-    .container
-        .row
-            .col-md-8
-                h1 Hi #{you}
-                p this is #{me}
-            .col-md-4
-                p 测试动态 Pug 模板引擎
+    #navbar-header.navbar-collapse.collapse.inverse
+        .container-fluid
+            .about
+                h4 About
+                p.text-muted Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.
+            .social
+                h4 Contact
+                ul.list
+                    li
+                        a(href='#') Follow on Tiwtter
+                    li
+                        a(href='#') Follow on FaceBook
+                    li
+                        a(href='#') Email me
+    .navbar.navbar-static-top.navbar-dark.bg-inverse(style='background-color: #373A3C')
+        .container-fluid
+            a.nav-bar-brand(href='#') Menu
+            button.navbar-toggler.collapsed(type='button', data-toggle='collapse', data-target='#navbar-header', aria-expanded='false') &#9776;
+
+    .album.text-muted
+        .container
+            .row
+                .card
+                    img(src='http://pic.uuhy.com/uploads/2013/02/20/005-stunning-cityscapes-martin-stavars.jpg', data-toggle='modal', data-target='#myModal', data-video='./includes/10 1-2.mp4')
+                    p.card-text This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                .card
+                    img(src='http://pic.uuhy.com/uploads/2013/02/20/005-stunning-cityscapes-martin-stavars.jpg', data-toggle='modal', data-target='#myModal', data-video='./includes/10 1-2.mp4')
+                    p.card-text This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                .card
+                    img(src='http://pic.uuhy.com/uploads/2013/02/20/005-stunning-cityscapes-martin-stavars.jpg', data-toggle='modal', data-target='#myModal', data-video='./includes/10 1-2.mp4')
+                    p.card-text This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                .card
+                    img(src='http://pic.uuhy.com/uploads/2013/02/20/005-stunning-cityscapes-martin-stavars.jpg', data-toggle='modal', data-target='#myModal', data-video='./includes/10 1-2.mp4')
+                    p.card-text This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                .card
+                    img(src='http://pic.uuhy.com/uploads/2013/02/20/005-stunning-cityscapes-martin-stavars.jpg', data-toggle='modal', data-target='#myModal', data-video='./includes/10 1-2.mp4')
+                    p.card-text This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+
+                .card
+                    img(src='http://pic.uuhy.com/uploads/2013/02/20/005-stunning-cityscapes-martin-stavars.jpg', data-toggle='modal', data-target='#myModal', data-video='./includes/10 1-2.mp4')
+                    p.card-text This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+        #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+            .modal-dialog(role='document')
+                .modal-content
+                    .modal-header
+                        button.close(type='button', data-dismiss='modal', aria-label='Close')
+                            span(aria-hidden='true') &times;
+                            span.sr-only Close
+                        h4#myModalLabel.modal-title SomeTitle
+                        .modal-body#videoContainer
+
+    footer.text-muted
+        .container
+            p.pull-right
+                a(href='#') Back To Top
+
+    script(type='text/javascript').
+        var player = null
+        $(document).ready(function() {
+            $(".card img").click(function(e) {
+                var vedio = $(this).data('video')
+                var image = $(this).attr('src')
+
+                if(!player) {
+                    palyer  = new DPlayer({
+                        container: document.getElementById('videoContainer'),
+                        screetshot: true,
+                        video: {
+                            url: vedio,
+                            pic: image,
+                            thumbnails: image
+                        }
+                    })
+                } else {
+                    player.switchVideo({
+                        url: video,
+                        pic: image,
+                        type: auto
+                    })
+                }
+            })
+        })
