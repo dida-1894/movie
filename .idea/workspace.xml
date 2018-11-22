@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a5fe41d-31dd-45e7-b1a0-b9b0e23fb235" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/crawler/trailer-list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/crawler/trailer-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/crawler/trailer-list.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -44,7 +41,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="61" />
-          <entry key="js" value="1513" />
+          <entry key="js" value="1514" />
           <entry key="json" value="41" />
           <entry key="pug" value="2089" />
         </counts>
@@ -54,7 +51,7 @@
           <entry key="HTML" value="25" />
           <entry key="JSON" value="41" />
           <entry key="Jade" value="2089" />
-          <entry key="JavaScript" value="1488" />
+          <entry key="JavaScript" value="1489" />
           <entry key="PLAIN_TEXT" value="61" />
         </counts>
       </usages-collector>
@@ -83,8 +80,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/crawler/trailer-list.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+            <state relative-caret-position="482">
+              <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -235,12 +232,12 @@
       <option name="presentableId" value="Default" />
       <updated>1542632302325</updated>
       <workItem from="1542632311200" duration="14356000" />
-      <workItem from="1542879106305" duration="3941000" />
+      <workItem from="1542879106305" duration="4164000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18297000" />
+    <option name="totallyTimeSpent" value="18520000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -331,8 +328,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/crawler/trailer-list.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+        <state relative-caret-position="482">
+          <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
         </state>
       </provider>
     </entry>
