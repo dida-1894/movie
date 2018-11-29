@@ -19,9 +19,9 @@
   "homepage": "https://github.com/dida-1894/movie#readme",
   "dependencies": {
     "ali-oss": "^6.0.1",
-    "aliyun-oss": "^1.2.0",
     "koa": "^2.6.2",
     "koa-views": "^6.1.4",
+    "mongoose": "^5.3.14",
     "nanoid": "^2.0.0",
     "pug": "^2.0.3",
     "puppeteer": "^1.10.0",
