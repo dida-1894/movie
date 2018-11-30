@@ -1,10 +1,18 @@
 const mongoose = require('mongoose')
 const db = 'mongodb://localhost/douban-test'
+const glob = require('glob')
+const { resolve } = require('path')
 
 mongoose.Promise = global.Promise
 
+exports.initSchemas = () => {
+    // glob.sync(resolve(__dirname, './schema', '**/*.js')).forEach(require)
+    glob.sync(resolve(__dirname, './schema', '**/*.js')).forEach(require)
+}
+
 exports.connect = () => {
     let maxConnectTimes = 0
+
     return new Promise((resolve, reject) => {
         if (process.env.NODE_ENV !== 'production') {
             mongoose.set('debug', true)
@@ -13,34 +21,34 @@ exports.connect = () => {
         mongoose.connect(db)
 
         mongoose.connection.on('disconnected', () => {
-            maxConnectTimes ++
+            maxConnectTimes++
+
             if (maxConnectTimes < 5) {
                 mongoose.connect(db)
             } else {
-               throw new Error ('数据库链接失败了呢')
+                throw new Error('数据库挂了吧，快去修吧少年')
             }
         })
 
         mongoose.connection.on('error', err => {
-            maxConnectTimes ++
+            maxConnectTimes++
 
             if (maxConnectTimes < 5) {
                 mongoose.connect(db)
             } else {
-                console.log(err)
-                throw new Error('数据库链接失败了呢')
+                throw new Error('数据库挂了吧，快去修吧少年')
             }
         })
 
         mongoose.connection.once('open', () => {
-            const Dog = mongoose.model('Dog', {name: String})
-            const doga = new Dog({name: 'alpha'})
+            // const Dog = mongoose.model('Dog', { name: String })
+            // const doga = new Dog({ name: '阿尔法' })
 
-            doga.save().then(() => {
-                console.log(doga)
-            })
+            // doga.save().then(() => {
+            //   console.log('wang')
+            // })
             resolve()
-            console.log("MongoDB connected successfully!")
+            console.log('MongoDB Connected successfully!')
         })
     })
 }

@@ -69,12 +69,12 @@ UserSchema.pre('save', next=> {
 //实例方法，比对密码，限定登陆最大次数
 UserSchema.methods = {
     comparePassword: (_password, password) => {
-        return new Promise(((resolve, reject) => {
+        return new Promise((resolve, reject) => {
             bcrypt.compare(_password, password, (err, isMath) => {
                 if (!err) resolve(isMath)
                 else reject(err)
             })
-        }))
+        })
     },
 
     incLoginAttepts: (user) => {
